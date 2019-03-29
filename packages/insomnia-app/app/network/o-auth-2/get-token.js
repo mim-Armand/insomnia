@@ -17,6 +17,7 @@ import {
   P_REFRESH_TOKEN,
   X_RESPONSE_ID,
   X_ERROR,
+  RESPONSE_TYPE_ID_TOKEN,
 } from './constants';
 import * as models from '../../models';
 import type { RequestAuthentication } from '../../models/request';
@@ -214,6 +215,7 @@ async function _updateOAuth2Token(requestId: string, authResults: Object): Promi
     expiresAt,
     refreshToken: authResults[P_REFRESH_TOKEN] || null,
     accessToken: authResults[P_ACCESS_TOKEN] || null,
+    identityToken: authResults[RESPONSE_TYPE_ID_TOKEN] || null,
     error: authResults[P_ERROR] || null,
     errorDescription: authResults[P_ERROR_DESCRIPTION] || null,
     errorUri: authResults[P_ERROR_URI] || null,

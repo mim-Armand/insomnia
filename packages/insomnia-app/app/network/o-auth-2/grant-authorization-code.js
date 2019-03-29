@@ -148,6 +148,7 @@ async function _getToken(
     c.P_ERROR,
     c.P_ERROR_URI,
     c.P_ERROR_DESCRIPTION,
+    c.RESPONSE_TYPE_ID_TOKEN,
   ]);
 
   results[c.X_RESPONSE_ID] = response._id;

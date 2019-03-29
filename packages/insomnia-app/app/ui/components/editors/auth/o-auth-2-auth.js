@@ -561,6 +561,16 @@ class OAuth2Auth extends React.PureComponent<Props, State> {
           </div>
           <div className="form-control form-control--outlined">
             <label>
+              <small>Identity Token {tok ? <em>{expireLabel}</em> : null}</small>
+              <input
+                value={(tok && tok.identityToken) || ''}
+                placeholder="n/a"
+                onChange={this._handleUpdateAccessToken}
+              />
+            </label>
+          </div>
+          <div className="form-control form-control--outlined">
+            <label>
               <small>Access Token {tok ? <em>{expireLabel}</em> : null}</small>
               <input
                 value={(tok && tok.accessToken) || ''}
